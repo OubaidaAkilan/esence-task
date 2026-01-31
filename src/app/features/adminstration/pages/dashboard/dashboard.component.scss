@@ -80,7 +80,8 @@
 
 .form-actions {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row-reverse;
+    justify-content: center;
     gap: 1rem;
 }
 

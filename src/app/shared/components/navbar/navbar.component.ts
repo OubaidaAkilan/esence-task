@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { filter, Subject, takeUntil } from 'rxjs';
 import { NavigationEnd, Router } from '@angular/router';
+import { FEATURE_DISPLAY_NAMES } from 'src/app/core/config/features.config';
 
 @Component({
     selector: 'app-navbar',
@@ -12,7 +13,8 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit , OnDestroy{
   featureName: string = 'السجلات';
-  private  destroy$ = new Subject<void>();
+  userName = 'شريف محمد';
+  private readonly destroy$ = new Subject<void>();
 
   constructor(private  router: Router) { }
 
@@ -36,7 +38,8 @@ export class NavbarComponent implements OnInit , OnDestroy{
 
   private updateFeatureName(url: string): void {
     const segments = url.split('/').filter(s => s);
-    this.featureName = segments[0] || 'السجلات';
+    const segment = segments[0];
+    this.featureName = (segment && FEATURE_DISPLAY_NAMES[segment]) || segment;
   }
 
 }

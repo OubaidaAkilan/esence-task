@@ -1,0 +1,14 @@
+<div *ngIf="isOpen" class="modal-backdrop" (click)="closeModal()">
+  <div class="modal-container glass-panel" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+          <h2>{{ title }}</h2>
+          <button class="close-btn" (click)="closeModal()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+      </div>
+
+      <div class="modal-content">
+          <ng-content></ng-content>
+      </div>
+  </div>
+</div>

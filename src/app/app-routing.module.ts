@@ -24,6 +24,10 @@ const routes: Routes = [
             loadComponent: () => import('./features/adminstration/pages/settings/settings.component').then(m => m.SettingsComponent)
           }
         ]
+      },
+      {
+        path: 'recipients',
+        loadComponent: () => import('./features/recipients/pages/recipients/recipients.component').then(m => m.RecipientsComponent)
       }
     ]
 
