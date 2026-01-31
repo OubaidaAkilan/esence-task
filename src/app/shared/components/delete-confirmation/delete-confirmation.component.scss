@@ -1,0 +1,29 @@
+// Matches task-form design: grey content area + white form-actions strip
+.delete-confirmation {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background-color: var(--background-white);
+  padding: 0;
+}
+
+.confirmation-container {
+  background-color: var(--background-light-gray);
+  padding: 1.5rem;
+}
+
+.confirmation-message {
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.form-actions {
+  display: flex;
+  justify-content:center;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: var(--background-white);
+  border-top: 1px solid var(--border-light-gray);
+}
+

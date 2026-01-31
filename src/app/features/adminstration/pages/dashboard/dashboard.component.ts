@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 import { TaskCardComponent } from '../../components/task/task-card/task-card.component';
 import { combineLatest, map, Observable, startWith } from 'rxjs';
 import { Task } from 'src/app/core/models/task';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TaskService } from 'src/app/core/services/task.service';
+import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
+import { DeleteConfirmationComponent } from 'src/app/shared/components/delete-confirmation/delete-confirmation.component';
+import { TaskFormComponent } from '../../components/task/task-form/task-form.component';
+import { EmptyStateComponent } from 'src/app/shared/components/empty-state/empty-state.component';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   standalone: true,
-  imports: [CommonModule, TaskCardComponent]
+  imports: [CommonModule, ReactiveFormsModule, TaskCardComponent, ModalComponent, DeleteConfirmationComponent, TaskFormComponent, EmptyStateComponent]
 })
 export class DashboardComponent implements OnInit {
   tasks$!: Observable<Task[]>;
@@ -23,7 +27,7 @@ export class DashboardComponent implements OnInit {
   isDeleteModalOpen = false;
   taskToDelete?: Task;
 
-  constructor(private taskService: TaskService) { }
+  constructor(private readonly taskService: TaskService) { }
 
   ngOnInit() {
     const allTasks$ = this.taskService.getTasks();
@@ -38,13 +42,13 @@ export class DashboardComponent implements OnInit {
   }
 
   openAddTask(): void {
-    this.modalTitle = 'Add New Task';
+    this.modalTitle = 'اضافه الاسم'; 
     this.editingTask = undefined; // Ensure simple undefined check works in template or child
     this.isModalOpen = true;
   }
 
   openEditTask(task: Task): void {
-    this.modalTitle = 'Edit Task';
+    this.modalTitle = 'تعديل الاسم';
     // Clone task to avoid mutation issues before save
     this.editingTask = { ...task };
     this.isModalOpen = true;

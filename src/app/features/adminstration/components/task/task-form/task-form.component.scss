@@ -1,0 +1,77 @@
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background-color: var(--background-white);
+    padding: 0;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--background-light-gray);
+    padding: 1.5rem;
+    
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-dark);
+        text-align: right;
+
+        .required {
+            color: var(--danger-red);
+        }
+    }
+
+    input,
+    textarea,
+    select {
+        background: var(--background-white);   
+        border: 1px solid var(--border-light-gray);
+        border-radius: 4px;
+        padding: 0.75rem 1rem;
+        color: var(--text-dark);
+        font-family: inherit;
+        font-size: 0.875rem;
+        transition: border-color 0.2s;
+        width: 100%;
+        box-sizing: border-box;
+
+        &::placeholder {
+            color: var(--text-placeholder);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 80px;
+    }
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content:center;
+    gap: 1rem;
+    padding: 0.5rem;
+    background: var(--background-white);
+    border-top: 1px solid var(--border-light-gray);
+}

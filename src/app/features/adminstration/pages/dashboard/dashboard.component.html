@@ -2,23 +2,34 @@
   <div class="toolbar-section">
     <div class="actions-bar">
 
-      <button class="btn-add">
+      <button class="btn-add" (click)="openAddTask()">
         <i class="fa-solid fa-plus"></i>
         <span> اضافه</span>
       </button>
 
       <div class="search-box">
-        <input type="text" placeholder="ابحث عن الاسم" />
+        <input type="text" placeholder="ابحث عن الاسم" [formControl]="searchControl"/>
       </div>
     </div>
   </div>
 
   <div class="tasks-list">
-    <app-task-card
-     *ngFor="let task of tasks$ | async" 
-     [task]="task" 
-     (edit)="openEditTask(task)"
-     (delete)="deleteTask(task)"></app-task-card>
+    <app-task-card *ngFor="let task of tasks$ | async" [task]="task" (edit)="openEditTask(task)"
+      (delete)="deleteTask(task)"></app-task-card>
 
+  <app-empty-state *ngIf="(tasks$ | async)?.length === 0" message="لا يوجد اسماء" icon="fa-solid fa-inbox"></app-empty-state>
   </div>
+
+  <app-modal [isOpen]="isModalOpen" [title]="modalTitle" (close)="closeModal()">
+    <app-task-form *ngIf="isModalOpen" [task]="editingTask" (save)="onSaveTask($event)" (cancel)="closeModal()">
+    </app-task-form>
+  </app-modal>
+
+  <app-modal [isOpen]="isDeleteModalOpen" title="تأكيد الحذف" (close)="closeDeleteModal()">
+    <app-delete-confirmation
+    message="هل انت متاكد من حذف هذا الاسم؟"
+    (confirm)="confirmDelete()"
+    (cancel)="closeDeleteModal()"
+  ></app-delete-confirmation>
+  </app-modal>
 </div>

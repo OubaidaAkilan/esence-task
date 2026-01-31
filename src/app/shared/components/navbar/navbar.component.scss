@@ -1,15 +1,35 @@
 .navbar {
-    background-color: var(--header-background-dark);
-    color: var(--text-light);
-    padding: 0.25rem 0;
+  background-color: var(--header-background-dark);
+  color: var(--text-light);
+  padding: 0.25rem 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.navbar-brand h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .profile-icon {
+    font-size: 1.75rem;
+    color: rgba(255, 255, 255, 0.9);
   }
   
-  .container {
-    padding: 0 1rem;
+  .profile-name {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.85);
   }
-  
-  .navbar-brand h3 {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 600;
-  }
+}
+
