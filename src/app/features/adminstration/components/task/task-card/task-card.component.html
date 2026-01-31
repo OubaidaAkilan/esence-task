@@ -1,0 +1,19 @@
+<div class="task-card">
+  <div class="card-content">
+      <h3 class="task-title">{{ task.title | titlecase }}</h3>
+  </div>
+
+  <div class="actions" (click)="$event.stopPropagation()">
+      <!-- Edit Button -->  
+      <button class="action-btn edit-btn" (click)="onEditTask()">
+          <span class="icon"><i class="fa-solid fa-pencil"></i></span>
+          <span>تعديل</span>
+      </button>
+
+      <!-- Delete Button -->
+      <button class="action-btn delete-btn" (click)="onDeleteTask()">
+          <span class="icon"><i class="fa-solid fa-trash"></i></span>
+          <span>حذف</span>
+      </button>
+  </div>
+</div>
