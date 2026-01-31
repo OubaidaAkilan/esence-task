@@ -3,7 +3,32 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 
 const routes: Routes = [
-  {'path': '', 'component': MainLayoutComponent}
+  {
+    'path': '',
+    'component': MainLayoutComponent,
+    'children': [
+      {
+        path: '',
+        redirectTo: '/administration/dashboard',
+        pathMatch: 'full'
+      },
+      {
+        path: 'administration',
+        children: [
+          {
+            path: 'dashboard',
+            loadComponent: () => import('./features/adminstration/pages/dashboard/dashboard.component').then(m => m.DashboardComponent)
+          },
+          {
+            path: 'settings',
+            loadComponent: () => import('./features/adminstration/pages/settings/settings.component').then(m => m.SettingsComponent)
+          }
+        ]
+      }
+    ]
+
+
+  }
 ];
 
 @NgModule({
