@@ -28,6 +28,9 @@ yarn-error.log
 !.vscode/extensions.json
 .history/*
 
+# Local Font Awesome (use npm package instead)
+src/assets/fontawesome-free-7.1.0-web/
+
 # Miscellaneous
 /.angular/cache
 .sass-cache/
