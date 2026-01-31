@@ -1,27 +1,40 @@
-# EsenceTask
+# EsenceTask (Angular Frontend Task)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
+This project is an Angular application built as part of a technical interview task.
 
-## Development server
+## ✅ Implemented Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+All requirements mentioned in the task document have been implemented:
 
-## Code scaffolding
+- Create, update, and delete name records
+- Add name and description using popup dialogs
+- View a list of names
+- Filter names using the navigation filter
+- Data management handled through an Angular service using **RxJS**
+- Simple header and sidebar layout
+- UI implemented using **SCSS only** (no Bootstrap or external UI frameworks)
+- Clean, readable, and well-structured code with clear separation of concerns
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🌍 Language & Layout Support
 
-## Build
+- The application is built primarily for **RTL** layouts
+- Styling has been implemented to also support **LTR** languages
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ⚠️ Known Improvements
 
-## Running unit tests
+- Responsive design for **small screen devices** (mobile view) still needs enhancement  
+  The application works correctly on desktop and larger screens, but further UI refinements are required for smaller screen sizes.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🚀 Getting Started (Run Locally)
 
-## Running end-to-end tests
+To run the project locally, follow these steps:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/OubaidaAkilan/esence-task.git
 
-## Further help
+   cd <project-folder>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   npm install
+
+   ng serve
