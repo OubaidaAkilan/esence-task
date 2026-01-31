@@ -1,0 +1,32 @@
+.sub-header {
+    background-color: #2c2c2c;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tab-link {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-placeholder);
+    background: transparent;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+
+    &:hover {
+        color: var(--text-light);
+        background-color:var(--header-background-medium) rgba(255, 255, 255, 0.05);
+    }
+
+    &.active {
+        color: var(--text-light);
+        background-color: var(--header-background-medium);
+        border-bottom-color: var(--text-light);
+    }
+}
