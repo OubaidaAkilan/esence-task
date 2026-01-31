@@ -33,7 +33,7 @@ To run the project locally, follow these steps:
    ```bash
    git clone https://github.com/OubaidaAkilan/esence-task.git
 
-   cd <project-folder>
+   cd esence-task
 
    npm install
 
