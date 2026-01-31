@@ -1,0 +1,7 @@
+<div class="sub-header" *ngIf="currentTabs.length > 0">
+  <div class="container tab-container">
+      <a *ngFor="let tab of currentTabs" [routerLink]="'/' + tab.path" routerLinkActive="active" class="tab-link">
+          {{ tab.label }}
+      </a>
+  </div>
+</div>

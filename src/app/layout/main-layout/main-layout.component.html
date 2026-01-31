@@ -1,0 +1,20 @@
+<div class="app-layout">
+    <header class="app-header">
+        <app-navbar></app-navbar>
+        <app-feature-sub-header></app-feature-sub-header>
+    </header>
+
+    <div class="layout-body">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Management</h3>
+                <a routerLink="/administration/dashboard" routerLinkActive="active" class="nav-item">Administration</a>
+                <a routerLink="/recipients" routerLinkActive="active" class="nav-item">Recipients</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>
